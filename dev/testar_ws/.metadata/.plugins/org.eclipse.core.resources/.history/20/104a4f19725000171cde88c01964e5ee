@@ -1,0 +1,19 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnGreaterThan extends SelectorNodeBoolean {
+	SelectorNodeNumber child1;
+	SelectorNodeNumber child2;
+	
+	public SnGreaterThan(ArrayList<SelectorNode> children){
+		super(children);
+		child1 = (SelectorNodeNumber)children.get(0);
+		child2 = (SelectorNodeNumber)children.get(1);
+	}
+	@Override
+	public boolean getValue(StateManager state) {
+		return (child1.getValue(state) > child2.getValue(state));
+	}
+
+}

@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import org.fruit.alayer.Action;
+
+
+public class SnNumberOfLeftClicks extends SelectorNodeNumber {
+
+	public SnNumberOfLeftClicks(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public int getValue(StateManager state) {
+		return state.getNumberOfActions(Action.ActionType.MOUSEDOWN);
+	}
+
+}

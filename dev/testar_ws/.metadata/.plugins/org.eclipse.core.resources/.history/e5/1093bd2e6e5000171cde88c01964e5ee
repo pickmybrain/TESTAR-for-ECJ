@@ -1,0 +1,19 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class History {
+	List<MyAction> previousActions = new ArrayList<>();
+	
+	public void addPreviousAction(MyAction a){
+		previousActions.add(a);
+	}
+
+	public MyAction previousAction() {
+
+		return previousActions.get(previousActions.size() - 1);
+		
+	}
+
+}

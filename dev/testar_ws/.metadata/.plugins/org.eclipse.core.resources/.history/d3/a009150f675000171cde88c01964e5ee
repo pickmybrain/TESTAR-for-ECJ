@@ -1,0 +1,16 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.Set;
+
+import es.upv.staq.testar.graph.IEnvironment;
+import es.upv.staq.testar.prolog.JIPrologWrapper;
+
+public abstract class SelectorNodeAction extends SelectorNode {
+	public SelectorNodeAction(ArrayList<SelectorNode> children) {
+		super(children);
+		
+	}
+
+	public abstract Action getAction(State state);
+}

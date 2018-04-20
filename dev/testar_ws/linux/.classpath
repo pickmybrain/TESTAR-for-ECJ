@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/target/linux.jar"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/core/target/core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/junit-jupiter-api-5.0.0-M3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/libatspi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/libgtk-3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/libwnck-3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/libX11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/linux/lib/opentest4j-1.0.0-M1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/core"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+import org.fruit.alayer.Action;
+
+public class SnLeftClicksAvailable extends SelectorNodeBoolean {
+
+	public SnLeftClicksAvailable(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public boolean getValue(StateManager state) {
+		return state.getAvailable(ActionType.MOUSEDOWN);
+	}
+
+}

@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+import org.fruit.alayer.Action;
+
+public class SnRandomLeastExecutedAction extends SelectorNodeAction {
+
+	public SnRandomLeastExecutedAction(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public Action getAction(StateManager state) {
+		return state.getRandomAction("LEAST");
+	}
+
+}

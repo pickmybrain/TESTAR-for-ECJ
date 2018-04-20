@@ -1,0 +1,31 @@
+package es.upv.staq.testar.algorithms;
+
+import java.util.Set;
+
+import org.fruit.alayer.State;
+
+import es.upv.staq.testar.graph.IEnvironment;
+import es.upv.staq.testar.prolog.JIPrologWrapper;
+import es.upv.staq.testar.strategyparser.Action;
+import es.upv.staq.testar.strategyparser.SelectorNode;
+import es.upv.staq.testar.strategyparser.SelectorNodeAction;
+import es.upv.staq.testar.strategyparser.StateManager;
+
+public class StrategyWalker extends AbstractWalker {
+	SelectorNodeAction mainNode;
+	StateManager statemgr;
+	
+	public StrategyWalker(SelectorNode main){
+		mainNode = (SelectorNodeAction)main;
+		
+	}
+	
+	@overrides
+	public Action selectAction(IEnvironment env, State state, Set<Action> actions, JIPrologWrapper jipWrapper){
+		statemgr.setState(state, actions, env);
+		return mainNode.getAction(statemgr);
+	}
+	public void print() {
+		mainNode.print(0);
+	}
+}

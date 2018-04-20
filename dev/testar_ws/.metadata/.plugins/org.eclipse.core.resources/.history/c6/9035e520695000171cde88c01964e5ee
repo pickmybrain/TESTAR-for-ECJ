@@ -1,0 +1,16 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnRandomAction extends SelectorNodeAction {
+
+	public SnRandomAction(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public Action getAction(State state) {
+		return state.getRandomAction();
+	}
+
+}

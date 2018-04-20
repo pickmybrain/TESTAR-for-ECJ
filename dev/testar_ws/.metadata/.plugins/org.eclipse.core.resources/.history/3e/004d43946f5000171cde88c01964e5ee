@@ -1,0 +1,16 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnTypeAction extends SelectorNodeActiontype {
+
+	public SnTypeAction(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public MyAction.ActionType getActiontype(StateManager state) {
+		return MyAction.ActionType.TYPE;
+	}
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.fruit.alayer.State"/>
+<fullyQualifiedTypeName name="java.awt.Desktop.Action"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.Action.ActionType"/>
+<fullyQualifiedTypeName name="es.upv.staq.testar.algorithms.StateManager"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.Roles"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.actions.ActionRoles"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.Tags"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.Action"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.Role"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="org.fruit.alayer.exceptions.NoSuchTagException"/>
+</qualifiedTypeNameHistroy>

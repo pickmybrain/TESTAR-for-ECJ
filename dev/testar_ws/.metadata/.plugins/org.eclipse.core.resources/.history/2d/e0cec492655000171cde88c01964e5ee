@@ -1,0 +1,24 @@
+package es.upv.staq.testar.algorithms;
+
+import java.util.List;
+
+import es.upv.staq.testar.strategyparser.Action;
+import es.upv.staq.testar.strategyparser.History;
+import es.upv.staq.testar.strategyparser.SelectorNode;
+import es.upv.staq.testar.strategyparser.SelectorNodeAction;
+import es.upv.staq.testar.strategyparser.State;
+
+public class StrategyWalker extends AbstractWalker {
+	SelectorNodeAction mainNode;
+	
+	public StrategyWalker(SelectorNode main){
+		mainNode = (SelectorNodeAction)main;
+		
+	}
+	public Action selectAction(State state, List<Action> availableActions, History history){
+		return mainNode.getAction(state, availableActions, history);
+	}
+	public void print() {
+		mainNode.print(0);
+	}
+}

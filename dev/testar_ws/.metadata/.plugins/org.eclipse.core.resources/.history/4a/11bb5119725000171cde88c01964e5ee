@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnNot extends SelectorNodeBoolean {
+	SelectorNodeBoolean child1;
+
+	public SnNot(ArrayList<SelectorNode> children) {
+		super(children);
+		child1 = (SelectorNodeBoolean)children.get(0);
+	}
+
+	@Override
+	public boolean getValue(StateManager state) {
+		return !(child1.getValue(state));
+	}
+
+}

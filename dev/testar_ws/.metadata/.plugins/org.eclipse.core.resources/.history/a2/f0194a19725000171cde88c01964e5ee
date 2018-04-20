@@ -1,0 +1,12 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public abstract class SelectorNodeNumber extends SelectorNode{
+	public SelectorNodeNumber(ArrayList<SelectorNode> children) {
+		super(children);
+		
+	}
+
+	public abstract int getValue(StateManager state);
+}

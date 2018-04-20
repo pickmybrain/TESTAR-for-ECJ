@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnAnd extends SelectorNodeBoolean{
+	SelectorNodeBoolean child1;
+	SelectorNodeBoolean child2;
+	
+	public SnAnd(ArrayList<SelectorNode> children){
+		super(children);
+		child1 = (SelectorNodeBoolean)children.get(0);
+		child2 = (SelectorNodeBoolean)children.get(1);
+	}
+	
+	public boolean getValue(State state){
+		return (child1.getValue(state));
+	}
+}

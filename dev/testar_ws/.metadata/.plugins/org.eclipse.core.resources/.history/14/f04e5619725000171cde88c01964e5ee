@@ -1,0 +1,19 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnNumberOfActionsOfType extends SelectorNodeNumber {
+	SelectorNodeActiontype child1;
+
+	public SnNumberOfActionsOfType(ArrayList<SelectorNode> children) {
+		super(children);
+		child1 = (SelectorNodeActiontype)children.get(0);
+	}
+
+	@Override
+	public int getValue(StateManager state) {
+		
+		return state.getNumberOfActions(child1.getActiontype(state));
+	}
+
+}

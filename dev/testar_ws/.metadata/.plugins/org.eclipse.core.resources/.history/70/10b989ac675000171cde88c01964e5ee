@@ -1,0 +1,17 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SnNumberOfPreviousActions extends SelectorNodeNumber {
+
+	public SnNumberOfPreviousActions(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public int getValue(State state) {
+		return availableActions.size();
+	}
+
+}

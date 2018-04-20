@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;StateManager.java&apos; to &apos;graph/src/es.upv.staq.testar.algorithms&apos;&#x0D;&#x0A;- Original project: &apos;core&apos;&#x0D;&#x0A;- Destination element: &apos;graph/src/es.upv.staq.testar.algorithms&apos;&#x0D;&#x0A;- Original element: &apos;org.fruit.alayer.StateManager.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=graph/src&lt;es.upv.staq.testar.algorithms" element1="/src&lt;org.fruit.alayer{StateManager.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1497383748371" units="1" version="1.0"/>
+</session>

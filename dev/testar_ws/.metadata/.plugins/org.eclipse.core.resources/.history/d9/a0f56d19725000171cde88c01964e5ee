@@ -1,0 +1,17 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class SnRandomNumber extends SelectorNodeNumber {
+
+	public SnRandomNumber(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public int getValue(StateManager state) {
+		return new Random().nextInt(100);
+	}
+
+}

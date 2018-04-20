@@ -1,0 +1,15 @@
+package strategyparser;
+
+public class Actiontype {
+	enum Type {LEFTCLICK, RIGHTCLICK, TYPE};
+	Type type;
+	
+	public Actiontype(String t){
+		type = Type.valueOf(t);
+	}
+	
+	public String getType(){
+		return type.toString();
+	}
+
+}

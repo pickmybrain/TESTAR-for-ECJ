@@ -1,0 +1,74 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import es.upv.staq.testar.algorithms.StrategyWalker;
+import static org.junit.Assert.*;
+
+public class Unittest {
+	public Unittest(){};
+	
+	@Test
+	public void createSelector(){
+		String strategy = "IfThenElse:GreaterThan:NumberOfLeftClicks:NumberOfTypeActions:RandomActionOfType:ClickAction:RandomActionOfType:TypeAction:";
+		SelectorFactory sf = new SelectorFactory(strategy);
+		StrategyWalker as = sf.getActionSelector();
+		StateManager state = new StateManager();
+		MyAction a1 = new MyAction(MyAction.ActionType.TYPE);
+		MyAction a2 = new MyAction(MyAction.ActionType.TYPE);
+		MyAction a3 = new MyAction(MyAction.ActionType.LEFTCLICK);
+		MyAction a4 = new MyAction(MyAction.ActionType.LEFTCLICK);
+		MyAction a5 = new MyAction(MyAction.ActionType.TYPE);
+		
+		List<MyAction> al = new ArrayList<>();
+		al.add(a1);
+		al.add(a2);
+		al.add(a3);
+		al.add(a4);
+		al.add(a5);
+		
+		state.setActions(al);
+		History history = new History();
+		System.out.println("Number of actions:"+state.getNumberOfActions());
+		System.out.println(state.getActionsOfType(MyAction.ActionType.TYPE));
+		System.out.println(state.getActionsOfType(MyAction.ActionType.LEFTCLICK));
+		MyAction a = as.selectAction(state, al, history);
+		
+		
+		assertTrue(a == a1 || a == a2 || a == a5);
+	}
+	@Test
+	public void createSelector2(){
+		String strategy = "IfThenElse:GreaterThan:NumberOfUnexecutedLeftClicks:NumberOfUnexecutedTypeActions:RandomActionOfType:ClickAction:RandomActionOfType:TypeAction:";
+		SelectorFactory sf = new SelectorFactory(strategy);
+		StrategyWalker as = sf.getActionSelector();
+		StateManager state = new StateManager();
+		
+		MyAction a1 = new MyAction(MyAction.ActionType.TYPE);
+		MyAction a2 = new MyAction(MyAction.ActionType.TYPE);
+		MyAction a3 = new MyAction(MyAction.ActionType.LEFTCLICK);
+		MyAction a4 = new MyAction(MyAction.ActionType.LEFTCLICK);
+		MyAction a5 = new MyAction(MyAction.ActionType.TYPE);
+		
+		List<MyAction> al = new ArrayList<>();
+		al.add(a1);
+		al.add(a2);
+		al.add(a3);
+		al.add(a4);
+		al.add(a5);
+		
+		state.setActions(al);
+		History history = new History();
+		System.out.println("Number of actions:"+state.getNumberOfActions());
+		System.out.println(state.getActionsOfType(MyAction.ActionType.TYPE));
+		System.out.println(state.getActionsOfType(MyAction.ActionType.LEFTCLICK));
+		MyAction a = as.selectAction(state, al, history);
+		
+		
+		assertTrue(a == a1 || a == a2 || a == a5);
+	}
+
+}

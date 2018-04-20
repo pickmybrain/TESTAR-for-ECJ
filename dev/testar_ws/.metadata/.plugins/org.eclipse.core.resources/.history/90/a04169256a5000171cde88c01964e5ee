@@ -1,0 +1,19 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnRandomActionOfTypeOtherThan extends SelectorNodeAction {
+	SelectorNodeActiontype child1;
+
+	public SnRandomActionOfTypeOtherThan(ArrayList<SelectorNode> children) {
+		super(children);
+		child1 = (SelectorNodeActiontype)children.get(0);
+		
+	}
+
+	@Override
+	public Action getAction(StateManager state) {
+		return state.getRandomActionOfTypeOtherThan(child1.getActiontype(state));
+	}
+
+}

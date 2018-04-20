@@ -1,0 +1,11 @@
+package es.upv.staq.testar.strategyparser;
+
+import es.upv.staq.testar.algorithms.StrategyWalker;
+
+public class TestarParser {
+
+	public void parseMe(String s){
+		SelectorFactory sf = new SelectorFactory(s);
+		StrategyWalker as = sf.getActionSelector();
+	}
+}

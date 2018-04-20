@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SnEquals.java&apos; to &apos;graph/src/es.upv.staq.testar.strategyparser&apos;&#x0D;&#x0A;- Original project: &apos;graph&apos;&#x0D;&#x0A;- Destination element: &apos;graph/src/es.upv.staq.testar.strategyparser&apos;&#x0D;&#x0A;- Original element: &apos;es.upv.staq.testar.strategyparser.SnEquals.java&apos;" description="Copy compilation unit" destination="/src&lt;es.upv.staq.testar.strategyparser" element1="/src&lt;es.upv.staq.testar.strategyparser{SnEquals.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1503604640071" units="1" version="1.0"/>
+</session>

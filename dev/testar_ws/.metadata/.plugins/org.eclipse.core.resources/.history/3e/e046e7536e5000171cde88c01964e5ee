@@ -1,0 +1,13 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public class SnClickAction extends SelectorNodeActiontype {
+	public SnClickAction(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	public MyAction.ActionType getActiontype(StateManager state){
+		return MyAction.ActionType.LEFTCLICK;
+	}
+}

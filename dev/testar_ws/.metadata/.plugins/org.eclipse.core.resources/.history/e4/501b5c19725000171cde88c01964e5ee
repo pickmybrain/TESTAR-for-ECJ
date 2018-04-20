@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+import org.fruit.alayer.Action.ActionType;
+
+public class SnNumberOfTypeActions extends SelectorNodeNumber {
+
+	public SnNumberOfTypeActions(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public int getValue(StateManager state) {
+		return state.getNumberOfActions(ActionType.TYPE);
+	}
+
+}

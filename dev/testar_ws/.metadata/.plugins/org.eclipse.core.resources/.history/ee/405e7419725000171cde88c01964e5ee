@@ -1,0 +1,18 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+import org.fruit.alayer.Action.ActionType;
+
+public class SnTypeActionsAvailable extends SelectorNodeBoolean {
+
+	public SnTypeActionsAvailable(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	@Override
+	public boolean getValue(StateManager state) {
+		return state.getAvailable(ActionType.TYPE);
+	}
+
+}

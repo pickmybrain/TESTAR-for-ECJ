@@ -1,0 +1,12 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+
+public abstract class SelectorNodeAction extends SelectorNode {
+	public SelectorNodeAction(ArrayList<SelectorNode> children) {
+		super(children);
+		
+	}
+
+	public abstract Action getAction(StateManager state);
+}

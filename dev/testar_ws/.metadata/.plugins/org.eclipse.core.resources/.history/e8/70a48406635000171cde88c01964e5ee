@@ -1,0 +1,152 @@
+package strategyparser;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+import es.upv.staq.testar.algorithms.ActionSelector;
+
+public class SelectorFactory {
+	public Queue<Function> queue = new LinkedList<Function>();
+	public enum Function {
+		AND, CLICKACTION, EQUALS, GREATERTHAN, IFTHENELSE, LEFTCLICKSAVAILABLE, NOT, NUMBEROFACTIONS, NUMBEROFACTIONSOFTYPE, 
+		NUMBEROFLEFTCLICKS, NUMBEROFPREVIOUSACTIONS, NUMBEROFTYPEACTIONS, NUMBEROFUNEXECUTEDLEFTCLICKS, NUMBEROFUNEXECUTEDTYPEACTIONS, 
+		OR, PREVIOUSACTION, RANDOMACTION, RANDOMACTIONOFTYPE, RANDOMACTIONOFTYPEOTHERTHAN, RANDOMLEASTEXECUTEDACTION, 
+		RANDOMMOSTEXECUTEDACTION, RANDOMNUMBER, RANDOMUNEXECUTEDACTION, RANDOMUNEXECUTEDACTIONOFTYPE, TYPEACTION, 
+		TYPEACTIONSAVAILABLE, TYPEOFACTIONOF
+	}
+
+	public SelectorFactory(String strategy){
+		makeStack(strategy); 
+	}
+	
+	public ActionSelector getActionSelector(){
+		SelectorNode main = getNode();
+		ActionSelector selector = new ActionSelector(main);
+		selector.print();
+		return selector;
+	}
+	
+	public SelectorNode getNode(){
+		Function f = queue.poll();
+		ArrayList<SelectorNode> children = new ArrayList<>();
+		
+		switch (f){
+			
+		case AND:
+			children.add(getNode());
+			children.add(getNode());
+			return new SnAnd(children);
+			
+		case CLICKACTION:
+			return new SnClickAction(children);
+			
+		case EQUALS:
+			children.add(getNode());
+			children.add(getNode());
+			return new SnEquals(children);
+			
+		case GREATERTHAN:
+			children.add(getNode());
+			children.add(getNode());
+			return new SnGreaterThan(children);
+			
+		case IFTHENELSE:
+			children.add(getNode());
+			children.add(getNode());
+			children.add(getNode());
+			return new SnIfThenElse(children);
+		
+		case LEFTCLICKSAVAILABLE:
+			return new SnLeftClicksAvailable(children);
+			
+		case NOT:
+			children.add(getNode());
+			return new SnNot(children);
+
+		case NUMBEROFACTIONS:
+			return new SnNumberOfActions(children);
+			
+		case NUMBEROFACTIONSOFTYPE:
+			children.add(getNode());
+			return new SnNumberOfActionsOfType(children);
+			
+		case NUMBEROFLEFTCLICKS:
+			return new SnNumberOfLeftClicks(children);
+			
+		case NUMBEROFPREVIOUSACTIONS:
+			return new SnNumberOfPreviousActions(children);
+			
+		case NUMBEROFTYPEACTIONS:
+			return new SnNumberOfTypeActions(children);
+			
+		case NUMBEROFUNEXECUTEDLEFTCLICKS:
+			return new SnNumberOfUnexecutedLeftClicks(children);
+			
+		case NUMBEROFUNEXECUTEDTYPEACTIONS:
+			return new SnNumberOfUnexecutedTypeActions(children);
+			
+		case OR:
+			children.add(getNode());
+			children.add(getNode());
+			return new SnOr(children);
+			
+		case PREVIOUSACTION:
+			return new SnPreviousAction(children);
+			
+		case RANDOMACTION:
+			return new SnRandomAction(children);
+			
+		case RANDOMACTIONOFTYPE:
+			children.add(getNode());
+			return new SnRandomActionOfType(children);
+			
+		case RANDOMACTIONOFTYPEOTHERTHAN:
+			children.add(getNode());
+			return new SnRandomActionOfTypeOtherThan(children);
+			
+		case RANDOMLEASTEXECUTEDACTION:
+			return new SnRandomLeastExecutedAction(children);
+			
+		case RANDOMMOSTEXECUTEDACTION:
+			return new SnRandomMostExecutedAction(children);
+			
+		case RANDOMNUMBER:
+			return new SnRandomNumber(children);
+			
+		case RANDOMUNEXECUTEDACTION:
+			return new SnRandomUnexecutedAction(children);
+			
+		case RANDOMUNEXECUTEDACTIONOFTYPE:
+			children.add(getNode());
+			return new SnRandomUnexecutedActionOfType(children);
+			
+		case TYPEACTION:
+			return new SnTypeAction(children);
+			
+		case TYPEACTIONSAVAILABLE:
+			return new SnTypeActionsAvailable(children);
+			
+		case TYPEOFACTIONOF:
+			children.add(getNode());
+			return new SnTypeOfActionOf(children);
+		default:
+			return null;
+		}
+		
+		
+	}
+	
+	private void makeStack(String strategy){
+		strategy = strategy.replace(" ", "");
+		strategy = strategy.replace("(", "");
+		strategy = strategy.replace(")", "");
+        String[] list = strategy.split(":");
+        for(String s : list){
+        	s = s.replace("-", "");
+        	s = s.toUpperCase();
+        	
+        	queue.add(Function.valueOf(s));
+        }
+	}
+}

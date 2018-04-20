@@ -1,0 +1,13 @@
+package es.upv.staq.testar.strategyparser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class SelectorNodeBoolean extends SelectorNode {
+	public SelectorNodeBoolean(ArrayList<SelectorNode> children) {
+		super(children);
+	}
+
+	public abstract boolean getValue(State state);
+
+}

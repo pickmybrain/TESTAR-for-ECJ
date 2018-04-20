@@ -1,0 +1,22 @@
+INDEX VERSION 1.127+C:\Users\chrys\workspace\mgroot\windux\dev\testar_ws\.metadata\.plugins\org.eclipse.jdt.core
+3389350814.index
+99195886.index
+481985186.index
+433228318.index
+139714729.index
+421552901.index
+71171762.index
+2663242109.index
+1357344351.index
+798819582.index
+170578211.index
+1467456077.index
+2589955883.index
+4110632223.index
+2260939740.index
+941178948.index
+1896386436.index
+2737401047.index
+9265801.index
+3972298753.index
+2623659859.index

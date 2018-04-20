@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/testar/lib/jsyntaxpane-0.9.5-b29.jar"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/core/target/core.jar"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/testar/${prologJarFile}"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/native/target/native.jar"/>
+	<classpathentry kind="con" path="C:/Users/chrys/workspace/mgroot/windux/src/graph/target/graph.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chrys/workspace/mgroot/windux/src/testar/lib/JNativeHook.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/graph"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/native"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
